@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intune Winget App Updater</title>
+  <meta name="description" content="Controlled Microsoft Intune Proactive Remediation package for updating approved Windows applications with winget.">
+  <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Microsoft Intune Ã‚Â· PowerShell Ã‚Â· winget</div>
+      <h1>Intune Winget App Updater</h1>
+      <p class="lead">
+        Controlled Microsoft Intune Proactive Remediation package for updating approved Windows applications with <code>winget</code>.
+        This repository is intentionally documented as a remediation package, not a read-only audit project.
+      </p>
+      <div class="nav">
+        <a href="#purpose">Purpose</a>
+        <a href="#components">Components</a>
+        <a href="#safety">Safety model</a>
+        <a href="#pilot">Pilot guidance</a>
+        <a href="#links">Links</a>
+      </div>
+    </section>
+
+    <section id="purpose" class="section grid">
+      <article class="card full">
+        <h2>Purpose</h2>
+        <p>
+          The package provides a controlled way to pilot and run approved application updates through Microsoft Intune without using
+          broad commands such as <code>winget upgrade --all</code>.
+        </p>
+        <div class="kpi">
+          <span>Allowlist based</span>
+          <span>No missing app installs</span>
+          <span>No upgrade-all behavior</span>
+          <span>Local logging</span>
+          <span>Intune export friendly</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Detection behavior</h3>
+        <ul>
+          <li>Uses <code>winget list</code> for installed application detection.</li>
+          <li>Uses the Windows uninstall registry as a fallback source.</li>
+          <li>Separates states such as <code>WingetInstalled</code>, <code>RegistryOnly</code>, <code>NotInstalled</code> and <code>Unknown</code>.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Remediation behavior</h3>
+        <ul>
+          <li>Updates only approved allowlist applications.</li>
+          <li>Does not install missing applications.</li>
+          <li>Does not force-update applications that are only visible in the registry.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="components" class="section grid">
+      <article class="card full">
+        <h2>Main components</h2>
+        <ul>
+          <li><strong>Approved App Updates Detection v10.3</strong> - Intune detection script.</li>
+          <li><strong>Approved App Updates Remediation v10.3</strong> - controlled remediation script.</li>
+          <li><strong>Log Summary Detection v10</strong> - compact log summary for Intune reporting.</li>
+          <li><strong>Log Summary No-Op Remediation v10</strong> - no-op remediation pair for log summary.</li>
+          <li><strong>Offline Technician Tool v10.3</strong> - manual local validation tool.</li>
+        </ul>
+      </article>
+
+      <article class="card third">
+        <h3>Approved allowlist</h3>
+        <pre><code>7zip.7zip
+Notepad++.Notepad++
+Mozilla.Firefox
+Google.Chrome
+Adobe.Acrobat.Reader.32-bit
+Adobe.Acrobat.Reader.64-bit</code></pre>
+      </article>
+
+      <article class="card third">
+        <h3>Output markers</h3>
+        <pre><code>WINGET_DETECTION_V10_3
+WINGET_REMEDIATION_V10_3
+WINGET_LOG_SUMMARY_V10</code></pre>
+      </article>
+
+      <article class="card third">
+        <h3>Log location</h3>
+        <pre><code>C:\ProgramData\IntuneWingetUpdates\Logs</code></pre>
+        <p class="muted">Log retention is managed by age and total folder size.</p>
+      </article>
+    </section>
+
+    <section id="safety" class="section grid">
+      <article class="card warning full">
+        <h2>Safety model</h2>
+        <p>
+          This repository contains remediation scripts that can update approved applications on managed Windows devices.
+          It should be tested with a small pilot group before wider deployment.
+        </p>
+        <ul>
+          <li>No customer names, tenant identifiers, internal hostnames or private IP addresses should be committed.</li>
+          <li>No real Intune exports, generated reports or logs should be committed.</li>
+          <li>Secret scanning, public safety checks and Pester tests are included in GitHub Actions.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="pilot" class="section grid">
+      <article class="card">
+        <h2>Pilot guidance</h2>
+        <ol>
+          <li>Deploy first to a small pilot device group.</li>
+          <li>Run hourly for one business day.</li>
+          <li>Review detection, remediation and log summary output.</li>
+          <li>Confirm that no unexpected applications are updated.</li>
+          <li>Move to a daily schedule only after stable pilot results.</li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h2>Quality checks</h2>
+        <ul>
+          <li>PSScriptAnalyzer</li>
+          <li>Secret Scan / Gitleaks</li>
+          <li>Pester Tests</li>
+          <li>Public Safety Check</li>
+          <li>GitHub Pages documentation build</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="links" class="section grid">
+      <article class="card full">
+        <h2>Project links</h2>
+        <ul>
+          <li><a href="https://github.com/Jarnon404/intune-winget-app-updater">Repository</a></li>
+          <li><a href="https://github.com/Jarnon404/intune-winget-app-updater/releases">Releases</a></li>
+          <li><a href="https://github.com/Jarnon404/intune-winget-app-updater/actions">GitHub Actions</a></li>
+          <li><a href="https://nousiainen.eu/it-osaaja">Portfolio</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>MIT licensed. Public-safe documentation for a controlled Microsoft Intune remediation package.</p>
+    </footer>
+  </main>
+</body>
+</html>
