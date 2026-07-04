@@ -1,15 +1,15 @@
-# Pilot-runbook
+# Pilot runbook
 
-## Ennen laajennusta
+## Before wider rollout
 
-Varmista exporteista:
+Confirm from Intune exports:
 
 ```text
 WINGET_DETECTION_V10_3
 SourceUpdateStatus=OK
 ```
 
-Ei pitäisi näkyä:
+The following errors should not appear:
 
 ```text
 Variable reference is not valid
@@ -18,19 +18,21 @@ TechnicalFailure_9999
 Add-Content : Stream was not readable
 ```
 
-## Onnistunut päivitys
+## Successful update
+
+Example:
 
 ```text
 UpdatedApps=Google.Chrome
 ```
 
-Jos näkyy:
+If the output shows:
 
 ```text
 UpdatedApps=None
 ```
 
-sovelluksia ei päivittynyt.
+no applications were updated.
 
 ## Reboot pending
 
@@ -38,11 +40,11 @@ sovelluksia ei päivittynyt.
 RebootPending=True
 ```
 
-Käynnistä laite uudelleen ennen installer-virheiden tulkintaa.
+Restart the device before interpreting installer failures.
 
-## Skriptin omat tekniset koodit
+## Script technical codes
 
 ```text
 9998 = command timeout
-9999 = wrapper/prosessikäynnistyksen tekninen virhe
+9999 = wrapper or process launch technical failure
 ```

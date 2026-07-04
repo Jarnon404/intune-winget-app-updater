@@ -1,6 +1,6 @@
-# GitHub push -komennot
+# GitHub push commands
 
-Aja projektikansion juuressa:
+Run from the repository root:
 
 ```powershell
 git init
@@ -12,7 +12,7 @@ git branch -M main
 git push -u origin main
 ```
 
-Jos repo on jo olemassa ja siinä on sisältöä:
+If the remote repository already exists and contains files:
 
 ```powershell
 git pull origin main --allow-unrelated-histories

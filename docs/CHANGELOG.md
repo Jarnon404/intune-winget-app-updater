@@ -2,30 +2,30 @@
 
 ## v10.3
 
-- Korjattu Windows PowerShell 5.1 -yhteensopivuusongelma.
-- Ei käytetä enää `ProcessStartInfo.ArgumentList.Add(...)`.
-- Käytetään yhteensopivaa `ProcessStartInfo.Arguments`-mallia.
-- Korjaa tilanteen, jossa source update päätyi wrapper-koodiin `9999`.
-- Markerit:
+- Fixed Windows PowerShell 5.1 compatibility.
+- Removed dependency on `ProcessStartInfo.ArgumentList.Add(...)`.
+- Uses the compatible `ProcessStartInfo.Arguments` model.
+- Fixes a case where source update could return wrapper code `9999`.
+- Markers:
   - `WINGET_DETECTION_V10_3`
   - `WINGET_REMEDIATION_V10_3`
 
 ## v10.2
 
-- Korjattu PowerShell-parserivirhe muuttujan ja kaksoispisteen kanssa.
-- Korjattu muoto:
+- Fixed a PowerShell parser issue involving a variable followed by a colon.
+- Corrected format:
   - `$AppId:` -> `$($AppId):`
 
 ## v10.1
 
-- Lisätty logikansion koonhallinta.
-- Poistaa yli 14 päivää vanhat lokit.
-- Pitää logikansion alle 50 MB.
+- Added log folder size management.
+- Removes log files older than 14 days.
+- Keeps the log folder below 50 MB.
 
 ## v10
 
 - Major baseline.
-- Hybrid detection/remediation.
-- RegistryOnly-tunnistus.
-- Selkeä Intune-output.
+- Hybrid detection and remediation.
+- RegistryOnly detection.
+- Clear Intune output.
 - Offline technician tool.
