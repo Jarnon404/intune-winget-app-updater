@@ -2,7 +2,7 @@
 
 Controlled Microsoft Intune Proactive Remediation package for updating approved Windows applications with `winget`.
 
-This repository is different from a read-only audit repository: the remediation script can update applications on managed devices.
+This repository is different from a read-only audit repository. The remediation script can update applications on managed devices.
 
 ## Documentation
 

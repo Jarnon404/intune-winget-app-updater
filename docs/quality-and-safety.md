@@ -22,13 +22,14 @@ The updater is intentionally limited to an approved application allowlist. It do
 Do not commit:
 
 - Intune export files
-- Real device names
-- User names or customer names
-- Tenant identifiers
-- Internal hostnames
-- Private IP addresses
-- Generated logs or reports
-- Secrets, tokens or credentials
+- real device names
+- user names
+- customer names
+- tenant identifiers
+- internal hostnames
+- private IP addresses
+- generated logs or reports
+- secrets, tokens or credentials
 
 ## Operational safety
 

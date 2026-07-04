@@ -1,6 +1,6 @@
-# Intune-asennusohje
+# Intune setup guide
 
-## Paketti 1: Winget - Approved App Updates
+## Package 1: Winget - Approved App Updates
 
 Detection script:
 
@@ -14,7 +14,7 @@ Remediation script:
 scripts/approved-app-updates/Intune-Winget-AppUpdates-Remediation-v10.3-HybridRegistry-AllNonFatal.ps1
 ```
 
-Asetukset:
+Recommended settings:
 
 ```text
 Run this script using the logged-on credentials: No
@@ -22,19 +22,19 @@ Enforce script signature check: No
 Run script in 64-bit PowerShell: Yes
 ```
 
-Pilotissa:
+Pilot schedule:
 
 ```text
 Hourly
 ```
 
-Tuotannossa:
+Production schedule:
 
 ```text
 Daily
 ```
 
-## Paketti 2: Winget - Log Summary
+## Package 2: Winget - Log Summary
 
 Detection script:
 
@@ -48,7 +48,7 @@ Remediation script:
 scripts/log-summary/Winget-LogSummary-NoOp-Remediation-v10.ps1
 ```
 
-## Exportista seurattavat kentät
+## Export fields to review
 
 ```text
 WINGET_DETECTION_V10_3
