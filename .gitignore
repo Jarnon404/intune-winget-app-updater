@@ -1,0 +1,14 @@
+# Logs and exports
+*.log
+*.etl
+*.evtx
+DeviceRunStatesByProactiveRemediation_*.csv
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts
+*.zip
