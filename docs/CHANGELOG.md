@@ -1,5 +1,17 @@
 # Changelog
 
+## v10.4.0 - Hybrid Registry Discovery update
+
+Script logic update.
+
+Includes:
+- Adds Approved App Updates detection v10.4 Hybrid Registry Discovery
+- Adds Approved App Updates remediation v10.4 Hybrid Registry AllNonFatal
+- Keeps update targeting controlled through the approved application list
+- Keeps missing applications as no-install behavior
+- Keeps RegistryOnly applications skipped by default
+- Maintains all app-level remediation failures as non-fatal warnings
+- Keeps ASCII-only PowerShell script content for Intune compatibility
 ## v10.3
 
 - Fixed Windows PowerShell 5.1 compatibility.

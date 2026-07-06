@@ -177,3 +177,11 @@ Do not commit:
 - private IP addresses
 - generated logs or reports
 - secrets, tokens or credentials
+## Current script baseline
+
+Current approved app update scripts:
+
+- Detection: Intune-Winget-AppUpdates-Detection-v10.4-HybridRegistry-Discovery.ps1
+- Remediation: Intune-Winget-AppUpdates-Remediation-v10.4-HybridRegistry-AllNonFatal.ps1
+
+Baseline: v10.4.0
