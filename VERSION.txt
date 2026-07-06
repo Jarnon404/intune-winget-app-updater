@@ -1,5 +1,1 @@
-Project: intune-winget-app-updater
-Approved App Updates: v10.3
-Log Summary: v10
-Offline Technician Tool: v10.3
-Build date: 2026-07-04 12:37:30
+v10.4.0
