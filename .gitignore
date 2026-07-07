@@ -12,3 +12,6 @@ Thumbs.db
 
 # Build artifacts
 *.zip
+
+# Allow GitHub Pages entry point
+!docs/index.html

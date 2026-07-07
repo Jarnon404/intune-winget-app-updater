@@ -185,3 +185,7 @@ Current approved app update scripts:
 - Remediation: Intune-Winget-AppUpdates-Remediation-v10.4-HybridRegistry-AllNonFatal.ps1
 
 Baseline: v10.4.0
+
+## Public safety note
+
+This repository is intended to contain only public-safe material. Do not commit customer-specific data, tenant identifiers, credentials, generated audit reports, internal hostnames, private IP addresses or environment-specific exports.
